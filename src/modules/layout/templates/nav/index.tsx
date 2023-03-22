@@ -1,4 +1,5 @@
 import { useMobileMenu } from "@lib/context/mobile-menu-context"
+import Image from "next/image"
 import Hamburger from "@modules/common/components/hamburger"
 import CartDropdown from "@modules/layout/components/cart-dropdown"
 import DropdownMenu from "@modules/layout/components/dropdown-menu"
@@ -15,27 +16,27 @@ const Nav = () => {
   const [isScrolled, setIsScrolled] = useState(false)
 
   //useEffect that detects if window is scrolled > 5px on the Y axis
-  useEffect(() => {
-    if (isHome) {
-      const detectScrollY = () => {
-        if (window.scrollY > 5) {
-          setIsScrolled(true)
-        } else {
-          setIsScrolled(false)
-        }
-      }
+  // useEffect(() => {
+  //   if (isHome) {
+  //     const detectScrollY = () => {
+  //       if (window.scrollY > 5) {
+  //         setIsScrolled(true)
+  //       } else {
+  //         setIsScrolled(false)
+  //       }
+  //     }
 
-      window.addEventListener("scroll", detectScrollY)
+  //     window.addEventListener("scroll", detectScrollY)
 
-      return () => {
-        window.removeEventListener("scroll", detectScrollY)
-      }
-    }
-  }, [isHome])
+  //     return () => {
+  //       window.removeEventListener("scroll", detectScrollY)
+  //     }
+  //   }
+  // }, [isHome])
 
-  useEffect(() => {
-    pathname === "/" ? setIsHome(true) : setIsHome(false)
-  }, [pathname])
+  // useEffect(() => {
+  //   pathname === "/" ? setIsHome(true) : setIsHome(false)
+  // }, [pathname])
 
   const { toggle } = useMobileMenu()
 
@@ -66,19 +67,28 @@ const Nav = () => {
               <Hamburger setOpen={toggle} />
             </div>
             <div className="hidden small:block h-full">
-              <DropdownMenu />
+              <Image
+              src='/images/logo2.png'
+              alt='logo'
+              width={80}
+              height={80}
+              />
+              {/* <DropdownMenu /> */}
             </div>
           </div>
 
           <div className="flex items-center h-full">
             <Link href="/">
-              <a className="text-xl-semi uppercase">Acme</a>
+              <a className="text-xl-semi uppercase">Pavi Marie</a>
             </Link>
           </div>
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
             <div className="hidden small:flex items-center gap-x-6 h-full">
               {process.env.FEATURE_SEARCH_ENABLED && <DesktopSearchModal />}
+              <Link href="/store">
+                <a>Store</a>
+                </Link>
               <Link href="/account">
                 <a>Account</a>
               </Link>
