@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        botti: "#C2D3E1",
+      },
       transitionProperty: {
         width: "width",
         spacing: "margin, padding",
