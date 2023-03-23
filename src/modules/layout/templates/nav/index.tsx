@@ -127,7 +127,6 @@ const Nav = () => {
                 width={80}
                 height={80}
               />
-              {/* <DropdownMenu /> */}
             </div>
           </div>
 
