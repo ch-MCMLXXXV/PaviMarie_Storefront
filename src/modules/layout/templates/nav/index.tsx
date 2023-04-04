@@ -102,7 +102,7 @@ const Nav = () => {
     >
       <header
         className={clsx(
-          "relative h-16 px-8 mx-auto transition-colors bg-transparent border-b border-transparent duration-200 group-hover:bg-white group-hover:border-gray-200",
+          "relative h-24 px-8 mx-auto transition-colors bg-transparent border-b border-transparent duration-200 group-hover:bg-white group-hover:border-gray-200",
           {
             "!bg-white !border-gray-200": !isHome || isScrolled,
           }
@@ -121,19 +121,26 @@ const Nav = () => {
               <Hamburger setOpen={toggle} />
             </div>
             <div className="hidden small:block h-full">
-              <Image
+              {/* <Image
                 src="/images/logo2.png"
                 alt="logo"
-                width={80}
-                height={80}
-              />
+                width={100}
+                height={100}
+              /> */}
             </div>
           </div>
 
           <div className="flex items-center h-full">
-            <Link href="/">
+            <Image
+              src="/images/logo3.png"
+              alt="logo"
+              width={125}
+              height={125}
+            />
+
+            {/* <Link href="/">
               <a className="text-xl-semi uppercase">Pavi Marie</a>
-            </Link>
+            </Link> */}
           </div>
 
           <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">

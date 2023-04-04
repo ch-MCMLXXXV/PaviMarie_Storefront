@@ -2,6 +2,7 @@ import clsx from "clsx"
 import { useCollections } from "medusa-react"
 import Link from "next/link"
 import CountrySelect from "../country-select"
+import Image from "next/image"
 
 const FooterNav = () => {
   const { collections } = useCollections()
@@ -10,9 +11,11 @@ const FooterNav = () => {
     <div className="content-container flex flex-col gap-y-8 pt-16 pb-8">
       <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between">
         <div>
-          <Link href="/">
-            <a className="text-xl-semi uppercase ">Pavie Marie</a>
-          </Link>
+          <Image src="/images/logo3.png" alt="logo" width={150} height={150} />
+
+          {/* <Link href="/">
+            <a className="text-xl-semi uppercase ">Pavi Marie</a>
+          </Link> */}
         </div>
         <div className="text-small-regular grid grid-cols-2 gap-x-16">
           <div className="flex flex-col gap-y-2">
